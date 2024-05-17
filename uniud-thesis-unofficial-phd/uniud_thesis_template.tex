@@ -1,0 +1,72 @@
+\documentclass[12pt, a4paper, twoside, numbers=enddot, bibliography=totoc, listof=totoc, headings=optiontoheadandtoc]{uniudthesis}
+
+\author{Name Surname}
+\supervisor{Prof Name Surname}
+\title{Title of the PhD Thesis}
+
+\programme{PhD Programme in \dots}
+\cycle{XXXVI}
+\defenseyear{2024}
+%\logo[0.6]{./LogoTipo.jpg}
+
+\usepackage{lipsum}
+\addbibresource{references.bib} % Use BibLaTex with BIBER for Bibliography!
+
+\abstract{\lipsum[1]}
+
+\begin{document}
+	\maketitle
+	\frontmatter\pagestyle{plain}
+	\makeabstract
+%	\chapter{Abstract}
+%		TO DO:
+%			\begin{itemize}
+%				\item Fix bibliography
+%				\item pdf-a compliant
+%			\end{itemize}
+	\chapter{Selected Journal Papers (Optional)}
+		\begin{itemize}
+			\item Paper 1
+			\item Paper 2
+		\end{itemize}
+	
+	\cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{Contents}\tableofcontents
+	\listoffigures
+	\listoftables
+	\chapter{List of Abbreviations}
+		\lipsum[1-5]
+
+	\mainmatter\pagestyle{headings}
+	\part{A Part}
+		\chapter{A Chapter}
+			\strip{\lipsum[1]}
+			This is a citation~\cite{key_1}. This is a citation~\cite{key_2}.
+			\section{A Section}
+				\subsection{A Subsection}
+				\lipsum[1-5]
+					\begin{equation}
+						\mathcal{I} = \int_a^b f(x)\,dx
+					\end{equation}
+					
+					\begin{figure}[h!]
+						\caption{A Figure}
+					\end{figure}
+					
+					\begin{table}[h!]
+						\caption{A Table}
+					\end{table}
+					
+					\begin{table}[h!]
+						\caption{A Table}
+					\end{table}
+	
+	\chapter{Conclusions}
+		\lipsum[1]
+%	\chapter*{Acknowledgments}\addcontentsline{toc}{chapter}{Acknowledgments}
+
+	\appendix
+	\chapter{An Appendix}
+		\lipsum[1]
+	\references
+
+\end{document}

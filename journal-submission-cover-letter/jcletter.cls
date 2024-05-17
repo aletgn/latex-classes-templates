@@ -1,5 +1,21 @@
+%% jcletter.cls
+%% Copyright 2024 Alessandro Tognan.
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   https://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2008 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is Alessandro Tognan.
+%
+% This work consists of the file jcletter.cls.
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{jcletter}[2024/05/17 Cover Letter for Journal Submissions]
+\ProvidesClass{jcletter}[2024/05/18 Cover Letter for Journal Submissions]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
@@ -15,8 +31,7 @@
 \RequirePackage{lipsum}
 \RequirePackage{color}
 \RequirePackage[hidelinks]{hyperref}
-
-\thispagestyle{empty}
+\RequirePackage{fancyhdr}
 
 \newcommand{\submitter}[1]{\gdef\@submitter{#1}}
 \newcommand{\insertsumbitter}{%
@@ -113,7 +128,8 @@
 	\fi
 }
 
-\renewcommand*{\maketitle}{%
+\fancypagestyle{myfancy}{%
+	\fancyhf{}% Clear all header and footer fields
 	\begin{minipage}{\dimexpr\textwidth-\parindent\relax}
 		%\hspace{-0.5cm}
 		\begin{minipage}{0.5\linewidth}
@@ -130,6 +146,11 @@
 		\end{minipage}
 	\end{minipage}
 	\newline\newline
+}
+
+\renewcommand*{\maketitle}{%
+	\pagestyle{myfancy}
+	\pagestyle{empty}
 	
 	\hfill \today
 	\newline\newline
