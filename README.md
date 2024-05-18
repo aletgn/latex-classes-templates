@@ -2,7 +2,9 @@
 
 The repository includes the following classes and/or templates:
 
--  cover letter for journal submissions.
+- cover letter for journal submissions;
+
+- rebuttal letter for journals submissions.
 
 # License
 Each class/template is separately licensed.
