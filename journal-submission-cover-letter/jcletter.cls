@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{jcletter}[2024/05/17 Cover Letter for Journal Submissions]
+\ProvidesClass{jcletter}[2024/05/18 Cover Letter for Journal Submissions]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
