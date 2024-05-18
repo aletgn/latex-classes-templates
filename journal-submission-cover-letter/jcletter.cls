@@ -15,8 +15,7 @@
 \RequirePackage{lipsum}
 \RequirePackage{color}
 \RequirePackage[hidelinks]{hyperref}
-
-\thispagestyle{empty}
+\RequirePackage{fancyhdr}
 
 \newcommand{\submitter}[1]{\gdef\@submitter{#1}}
 \newcommand{\insertsumbitter}{%
@@ -113,7 +112,8 @@
 	\fi
 }
 
-\renewcommand*{\maketitle}{%
+\fancypagestyle{myfancy}{%
+	\fancyhf{}% Clear all header and footer fields
 	\begin{minipage}{\dimexpr\textwidth-\parindent\relax}
 		%\hspace{-0.5cm}
 		\begin{minipage}{0.5\linewidth}
@@ -130,6 +130,11 @@
 		\end{minipage}
 	\end{minipage}
 	\newline\newline
+}
+
+\renewcommand*{\maketitle}{%
+	\pagestyle{myfancy}
+	\pagestyle{empty}
 	
 	\hfill \today
 	\newline\newline
