@@ -3,3 +3,8 @@
 *.out
 *.synctex.gz
 *-eps-converted-to.pdf
+*.bcf
+*.nav
+*.run.xml
+*.snm
+*.toc

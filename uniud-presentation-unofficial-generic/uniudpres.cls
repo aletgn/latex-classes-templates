@@ -207,37 +207,10 @@
 		}
 	
 	\begin{frame}[noframenumbering]{}		
-%		\begin{minipage}[t]{\linewidth}
-%			\begin{minipage}{0.59\linewidth}
-%				\insertlogolh
-%			\end{minipage}
-%			\begin{minipage}{0.39\linewidth}
-%				\begin{flushright}
-%					\insertlogorh
-%				\end{flushright}
-%			\end{minipage}
-%			
-%		\insertphd
-%		\end{minipage}
-		
-		
 		\begin{center}
 			\vskip 25pt
 			{\color{unibrown}\textbf{\inserttitle}}
 		\end{center}
-		
-
-%		\begin{minipage}{\linewidth}
-%			\begin{minipage}{0.59\linewidth}
-%				\insertauthorqual\\ {\color{unibrown} \textbf{\insertauthor}}
-%			\end{minipage}
-%			\begin{minipage}{0.39\linewidth}
-%				\begin{flushright}
-%					\insertcoauthorqual\\ \insertcoauthor
-%				\end{flushright}
-%			\end{minipage}
-%		\end{minipage}
-				
 		\note{\insertintronotes}
 
 	\end{frame}
