@@ -6,7 +6,9 @@ The repository includes the following classes and/or templates:
 
 - rebuttal letter for journals submissions;
 
-- UniUD (unofficial) presentation template.
+- UniUD (unofficial) presentation template;
+
+- UniUD (unofficial) phd presentation template.
 
 # License
 Each class/template is separately licensed.
