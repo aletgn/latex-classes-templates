@@ -8,7 +8,9 @@ The repository includes the following classes and/or templates:
 
 - UniUD (unofficial) presentation template;
 
-- UniUD (unofficial) phd presentation template.
+- UniUD (unofficial) phd presentation template;
+
+- AIAS (unofficial) conference presentation template.
 
 # License
 Each class/template is separately licensed.
