@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{uniudpres}[2024/05/13 UniUD -- Unofficial Presentation Template]
+\ProvidesClass{uniudphd}[2024/05/13 UniUD -- Unofficial Presentation Template]
 % TODO minipages
 % TODO renew columns to fit linewidth
 % TODO if logo research group -> minipage title and picture

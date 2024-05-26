@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{jcletter}[2024/05/18 Rebuttal for Journal Submissions]
+\ProvidesClass{jrebuttal}[2024/05/18 Rebuttal for Journal Submissions]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax

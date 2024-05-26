@@ -1,0 +1,80 @@
+\documentclass[10pt, aspectratio=169, handout]{aiaspres}
+
+\graphicspath{{./}}
+
+\author{\textbf{Name Surname}}
+\coauthor{Name Surname, Name Surname}
+\title{Title of The Presentation}
+
+\dept{Affiliation}
+\event{CONFERENCE NO.}
+\loc{CITY}
+\date{XX-XX MONTH YYY}
+
+% logos not provided here, they can be found elsewhere
+%\logolh[.11]{path_to_logo}
+%\logorh[0.35]{path_to_header}
+
+\usefonttheme[onlymath]{serif}
+%\setbeameroption{show notes on second screen=bottom}
+%\intronote{Salutation}
+
+%\AtBeginSection[]{} % <- uncomment this to remove minitocs at the beginning of Sections
+
+\begin{document}
+	
+	\maketitle
+
+	\section{Introduction}
+	\subsection{Subsection}
+	\begin{frame}{Introduction}
+		\onslide<2->\begin{block}{A block}
+			content...
+		\end{block}
+	\note{Speech
+		\nskip
+		Speech}
+	\end{frame}
+	
+	\section{Methods}
+	\begin{frame}{Introduction}
+		\begin{block}{content...}
+			\begin{itemize}
+				\item Item 1
+				\item Item 2
+			\end{itemize}
+		\end{block}
+		
+		\begin{fullcols}
+			\begin{column}[t]{0.49\linewidth}
+				\begin{block}{title}
+					content...
+				\end{block}
+			\end{column}
+			
+			\begin{column}[t]{0.49\linewidth}
+				\begin{block}{title}
+					content...
+				\end{block}
+			\end{column}
+		\end{fullcols}
+	\end{frame}
+	
+	\section{Conclusions}
+	\begin{frame}{Introduction}
+		\begin{block}{content...}
+			\begin{itemize}
+				\item Item 1
+				\item Item 2
+			\end{itemize}
+		\end{block}
+		
+		\begin{block}{content...}
+			\begin{itemize}
+				\item Item 1
+				\item Item 2
+			\end{itemize}
+		\end{block}
+		\note{Conclusion Notes}
+	\end{frame}
+\end{document}
