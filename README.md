@@ -8,6 +8,8 @@ The repository includes the following classes and/or templates:
 
 - UniUD (unofficial) presentation template;
 
+- UniUD (unofficial) presentation template (web colors);
+
 - UniUD (unofficial) phd presentation template;
 
 - AIAS (unofficial) conference presentation template.
