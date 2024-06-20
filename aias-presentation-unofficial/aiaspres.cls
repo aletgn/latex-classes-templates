@@ -147,6 +147,7 @@
 				\small\color{white}\insertdept\par
 			\end{beamercolorbox}%
 			}
+		\note{\insertintronotes}
 		\end{frame}
 	}
 }
