@@ -12,7 +12,7 @@ The repository includes the following classes and/or templates:
 
 - UniUD (unofficial) phd presentation template;
 
-- AIAS (unofficial) conference presentation template.
+- AIAS (unofficial) conference presentation template;
 
 - AIAS (unofficial) candidature template for AIAS Award.
 
