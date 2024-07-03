@@ -14,5 +14,7 @@ The repository includes the following classes and/or templates:
 
 - AIAS (unofficial) conference presentation template.
 
+- AIAS (unofficial) candidature template for AIAS Award.
+
 # License
 Each class/template is separately licensed.

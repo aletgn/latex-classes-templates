@@ -1,0 +1,65 @@
+% -------------------------------------------------
+% Compile with XeLaTex
+% Use Biblatex and Biber (backend) for bibliography
+% -------------------------------------------------
+
+\documentclass[11pt]{aiasaward}
+\addbibresource{references.bib}
+
+\usepackage{lipsum} % fictitiuos text. remove when editing
+\sommario{Esempio di sommario in italiano. \lipsum[1]}
+\summary{Example of English abstract. \lipsum[1]}
+\keywords{KW1; KW2; KW3; KW4; KW5.}
+\aiasid{IDID}
+\aiastitle{TITOLO DELLA MEMORIA TITOLO DELLA MEMORIA TITOLO DELLA MEMORIA TITOLO DELLA MEMORIA TITOLO DELLA MEMORIA TITOLO DELLA MEMORIA}
+\aiasno{xx}
+\aiasdates{INIZIO-FINE}
+\aiasyear{ANNO}
+\aiasmonth{MESE}
+\authors{A. Autore\textsuperscript a, B. Autore\textsuperscript b}
+\affiliation{\textsuperscript{a}Affiliazione A, \textsuperscript{b}Affiliazione B}
+
+
+\begin{document}
+	\maketitle
+	\section{INTRODUZIONE}
+		\lipsum[1] Citazione~\cite{dummy_paper} Come in figura~\ref{fig:fig1}.
+		\begin{figure}[h!]
+			\centering
+%			\includegraphics[width=0.5\linewidth]{path_to_figure}
+			\caption{Didascalia della figura.}
+			\label{fig:fig1}
+		\end{figure}
+		
+	\section{UNA SEZIONE}
+		\lipsum[2] Equazione~\ref{eq:eq1}.
+		\begin{equation}
+			f(x) = \int_{0}^{x} F(t) dt
+			\label{eq:eq1}
+		\end{equation}
+		Come di seguito:
+		\begin{equation*}
+			g'(x) = \frac{dG(x)}{dx}
+		\end{equation*}
+		
+	\section{ALTRA SEZIONE}
+		\lipsum[3] Come in Tabella~\ref{tab:tab1}. Citazioni multiple~\cite{dummy_paper1, dummy_paper2, dummy_paper3}.
+		\begin{table}[h!]
+			\centering
+			\caption{Didascalia tabella.}
+			\begin{tabular}{cc}
+				\toprule
+				\makecell[t]{Colonna\\ 1}  & Colonna 2\\
+				\midrule
+				Entrata 1 & Entrata 2\\
+				\bottomrule
+			\end{tabular}   
+			\label{tab:tab1}
+		\end{table}
+
+	\section{CONCLUSIONI}
+		\lipsum[4]
+
+\renewcommand*{\bibfont}{\footnotesize} % reduce font of bilbliography
+\printbibliography[title=BIBLIOGRAFIA]
+\end{document}
