@@ -6,15 +6,17 @@ The repository includes the following classes and/or templates:
 
 - rebuttal letter for journals submissions;
 
-- UniUD (unofficial) presentation template;
+- UniUD (unofficial) presentation;
 
-- UniUD (unofficial) presentation template (web colors);
+- UniUD (unofficial) presentation (web colors);
 
-- UniUD (unofficial) phd presentation template;
+- UniUD (unofficial) PhD presentation;
 
-- AIAS (unofficial) conference presentation template;
+- UniUD (unofficial) PhD thesis (IN PROGRESS);
 
-- AIAS (unofficial) candidature template for AIAS Award.
+- AIAS (unofficial) conference presentation;
+
+- AIAS (unofficial) candidature for AIAS Award.
 
 # License
 Each class/template is separately licensed.

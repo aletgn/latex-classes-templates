@@ -1,0 +1,59 @@
+\documentclass[12pt, a4paper, twoside, numbers=enddot, bibliography=totoc, listof=totoc, headings=optiontoheadandtoc]{uniudthesis}
+
+\author{An author}
+\title{A title}
+\date{\today}
+
+\usepackage{lipsum}
+
+\begin{document}
+	\maketitle
+	\frontmatter\pagestyle{plain}
+	\chapter{Abstract}
+		TO DO:
+			\begin{itemize}
+				\item Add frontispiece as \texttt{maketitle}
+				\item Fix bibliography
+				\item Commands for \texttt{Abstract}, \texttt{Acknowledgments},
+				\texttt{Conclusions}
+				\item pdf-a compliant
+			\end{itemize}
+	\chapter{Selected Journal Papers (Optional)}
+		\begin{itemize}
+			\item Paper 1
+			\item Paper 2
+		\end{itemize}
+	
+	\cleardoublepage\phantomsection\addcontentsline{toc}{chapter}{Contents}\tableofcontents
+	\listoffigures
+	\listoftables
+	\chapter{List of Abbreviations}
+		\lipsum[1-5]
+	
+	\mainmatter\pagestyle{headings}
+	\part{A Part}
+		\chapter{A Chapter}{}
+			\section{A Section}
+				\subsection{A Subsection}
+				\lipsum[1-5]
+					\begin{equation}
+						\mathcal{I} = \int_a^b f(x)\,dx
+					\end{equation}
+					
+					\begin{figure}[h!]
+						\caption{A Figure}
+					\end{figure}
+					
+					\begin{table}[h!]
+						\caption{A Table}
+					\end{table}
+					
+					\begin{table}[h!]
+						\caption{A Table}
+					\end{table}
+	
+	\backmatter
+		\chapter{Conclusions}
+		\chapter*{Acknowledgments}\addcontentsline{toc}{chapter}{Acknowledgments}
+
+\end{document}
