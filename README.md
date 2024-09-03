@@ -12,7 +12,7 @@ The repository includes the following classes and/or templates:
 
 - UniUD (unofficial) PhD presentation;
 
-- UniUD (unofficial) PhD thesis (IN PROGRESS);
+- UniUD (unofficial) PhD thesis;
 
 - AIAS (unofficial) conference presentation;
 
