@@ -49,20 +49,131 @@
 %
 \raggedbottom
 %
-% bibliography
-% bibtex
-	%\usepackage[numbers, compress]{natbib}
-	%\bibliographystyle{unsrtnat}
-	% at the end
-	%\renewcommand{\bibname}{References}
-	% {\small \singlespacing \bibliography{references.bib}}
-	%{\setlength{\bibsep}{3pt} \footnotesize \bibliography{refs.bib}}
-% biblatex
-	%\usepackage[autostyle,italian=guillemets]{csquotes}
-	%\usepackage[sorting=none, style=numeric, backend=biber]{biblatex} %sorting=ynt %style=authoryear-comp %sorting=ynt %style=authoryear-comp
-	% \usepackage[maxbibnames=1, sorting=none, style=numeric, backend=biber, url=false, isbn=false, doi=true]{biblatex} 
-	% \AtEveryBibitem{\clearfield{day}\clearfield{month}\clearfield{endday}\clearfield{endmonth}\clearfield{pages}\clearfield{volume}\clearfield{abstract}}
-	% \addbibresource{references.bib}
-	% at the end
-	% \nocite{*}
-	% {\small \singlespacing \printbibliography[title = References]}
+% bibliography -- biblatex
+\RequirePackage[sorting=none, style=numeric, backend=biber, isbn=false, doi=true, natbib=true]{biblatex}
+\DeclareFieldFormat[article]{title}{#1}
+\DeclareFieldFormat[book]{title}{\textit{#1}}
+%\AtEveryBibitem{\clearfield{day}\clearfield{month}\clearfield{endday}\clearfield{endmonth}\clearfield{pages}\clearfield{volume}\clearfield{abstract}}
+\renewcommand*{\bibfont}{\footnotesize}
+\newcommand{\references}{{\singlespacing \printbibliography[title = References]}}
+
+% Data
+\newcommand{\programme}[1]{\gdef\@programme{#1}}
+\newcommand{\insertprogramme}{%
+	\ifdefined\@programme
+		\@programme
+	\else
+		No PhD programme provided
+	\fi
+}
+
+\newcommand{\cycle}[1]{\gdef\@cycle{#1}}
+\newcommand{\insertcycle}{%
+	\ifdefined\@cycle
+		\@cycle
+	\else
+		No PhD cycle provided (Roman Numbers)
+	\fi
+}
+
+\newcommand{\defenseyear}[1]{\gdef\@defenseyear{#1}}
+\newcommand{\insertdefenseyear}{%
+	\ifdefined\@defenseyear
+		\@defenseyear
+	\else
+		No year of the defense provided
+	\fi
+}
+
+\newcommand{\inserttitle}{%
+	\ifdefined\@title
+		\@title
+	\else
+		No Title Provided
+	\fi
+}
+
+\newcommand{\insertauthor}{%
+	\ifdefined\@author
+		\@author
+	\else
+		No Author Provided
+	\fi
+}
+
+\newcommand{\supervisor}[1]{\gdef\@supervisor{#1}}
+\newcommand{\insertsupervisor}{%
+	\ifdefined\@supervisor
+		\@supervisor
+	\else
+		No supervisor provided (Roman Numbers)
+	\fi
+}
+
+\newcommand{\logo}[2][]{\gdef\@logo{#2}\gdef\@logooptions{#1}}
+\newcommand{\insertlogo}{
+	\ifdefined\@logo
+		\includegraphics[width=\@logooptions\linewidth]{\@logo}%
+	\else
+		NO Logo Provided
+	\fi
+}
+
+\newcommand{\abstract}[1]{\gdef\@abstract{#1}}
+\newcommand{\makeabstract}{%
+	\ifdefined\@abstract
+		\chapter{Abstract}
+			\noindent\@abstract
+	\else
+		No abstract provided
+	\fi
+}
+
+% Frontispiece
+\renewcommand*{\maketitle}{%
+	\newgeometry{top=0.7cm, bottom=1cm, left=1.5cm, right=1.5cm}
+	\begin{titlepage}
+		\sffamily % remove this for serif font (as in the default setting)
+		\noindent
+		\begin{minipage}[t]{0.1\linewidth}
+			\colorbox{unibrown}{\rule{\linewidth}{0pt}\rule{0pt}{0.3 cm}}
+		\end{minipage}%
+		\begin{minipage}[t]{0.3\linewidth}
+			\colorbox{uniorange}{\rule{\linewidth}{0pt}\rule{0pt}{0.3 cm}}
+		\end{minipage}%
+		\begin{minipage}[t]{0.6\linewidth}
+			\colorbox{uniblue}{\rule{\linewidth}{0pt}\rule{0pt}{0.3 cm}}
+		\end{minipage}
+
+
+		\begin{minipage}[t][1.2cm][c]{0.5\linewidth}
+			\insertlogo
+		\end{minipage}%
+		\begin{minipage}[t][1.2cm][c]{0.5\linewidth}
+			\raggedleft
+			\href{www.uniud.it}{\texttt{\textcolor{unigrey}{www.uniud.it}}}
+			\vspace{1cm}
+		\end{minipage}%
+
+		\vspace*{1.0cm}\centering
+		\insertprogramme \\\vskip5pt \insertcycle\ CYCLE
+
+		\vspace{6.5cm}\centering
+		{\large \textbf{\inserttitle}}
+
+		\vspace{7.5cm}
+		\begin{minipage}[t]{0.5\linewidth}
+			\textbf{PhD Candidate}\\
+			\insertauthor
+		\end{minipage}%
+		\begin{minipage}[t]{0.5\linewidth}
+			\raggedleft
+			\textbf{Supervisor}\\
+			\insertsupervisor
+		\end{minipage}%
+
+		\vfill\hrule\vskip8pt
+		{\small \textbf{Year \insertdefenseyear}} % dissertation year
+	\end{titlepage}
+	\restoregeometry
+}
