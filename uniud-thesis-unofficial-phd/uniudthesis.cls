@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{uniudthesis}[2024/09/03 UniUD Thesis]
+\ProvidesClass{uniudthesis}[2024/09/09 UniUD PhD Thesis]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrbook}}
 \ProcessOptions\relax
@@ -14,7 +14,7 @@
 \setcounter{secnumdepth}{\subsubsectionnumdepth}
 \setlength{\footskip}{80pt}
 \BeforeStartingTOC{\sffamily\renewcommand\familydefault{\sfdefault}}
-
+\renewcommand{\partformat}{Part \thepart\enskip}
 
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
