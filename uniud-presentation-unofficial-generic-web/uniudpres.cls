@@ -12,7 +12,7 @@
 
 % --- Required Packages
 \RequirePackage[utf8]{inputenc}
-\RequirePackage[english]{babel}
+\RequirePackage[UKenglish]{babel}
 \RequirePackage{booktabs}
 \RequirePackage{graphicx}
 \RequirePackage{amsmath, amsfonts, amsthm, mathrsfs}
