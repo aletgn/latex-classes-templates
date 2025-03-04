@@ -1,0 +1,54 @@
+\documentclass[12pt, oneside, openleft, draft]{esrfstd}
+\usepackage{graphicx} % Required for inserting images
+\graphicspath{{./Title};}
+\addbibresource{references.bib}
+
+\usepackage{lipsum}
+%
+\begin{document}
+\maketitle
+
+\section{Proposal Summary}
+\begin{wrapfigure}{r}{0.25\textwidth}
+	\centering
+	\caption{Blah}
+	\label{fig:todo}
+\end{wrapfigure}
+\lipsum[1]
+
+\section{Scientific background}
+\lipsum[1]
+\begin{equation}
+	f(x) = \int_{a}^{x} g(t) dt
+\end{equation}
+
+\section{Experimental Plan}
+\lipsum[1]
+\begin{figure}[h!]
+	\centering
+	\caption{A figure.}
+\end{figure}
+
+\section{Beamline(s) and beamtime requested with justification}
+\lipsum[1]~\cite{dummy_paper, dummy_paper2, dummy_paper3}
+
+\section{Results expected and impact - analysis strategy and significance of the results}
+\lipsum[1]
+\begin{table}[h!]
+	\centering
+	\caption{Caption.}
+	\begin{tabular}{cc}
+		\toprule
+		Column 1  & Columns 2\\
+		\midrule
+		Entry 1 & Entry 2\\
+		\bottomrule
+	\end{tabular}   
+	\label{tab:tab1}
+\end{table}
+
+\section{References}
+\printbibliography[heading=none]
+
+
+\end{document}
