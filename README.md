@@ -2,6 +2,10 @@
 
 The repository includes the following classes and/or templates:
 
+- beamline proposal for ESRF STD projects (unofficial);
+
+- beamline proposal (generic, 2-page max);
+
 - cover letter for journal submissions;
 
 - rebuttal letter for journals submissions;
