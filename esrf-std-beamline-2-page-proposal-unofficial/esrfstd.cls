@@ -15,7 +15,7 @@
 %
 % This work consists of the file esrfstd.cls.
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{esrfstd}[2025/04/03 ESRF STD Beamline proposal]
+\ProvidesClass{esrfstd}[2025/03/04 ESRF STD Beamline proposal]
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrartcl}}
 \ProcessOptions\relax
