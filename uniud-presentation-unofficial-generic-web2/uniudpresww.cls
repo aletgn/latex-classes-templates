@@ -138,16 +138,13 @@
 			{\color{uniudblue} \textbf{\insertdept}};
 			
 			\node[align=left, text width=0.9\paperwidth, text=uniudblue] (title)
-			at (current page.center) [xshift=0cm, yshift=0cm] {
+			at (current page.center) [xshift=0cm, yshift=0.03\paperwidth] {
 				{\Large \textbf{\inserttitle}}
 			};
 			
-			\node[align=left, text width=0.9\paperwidth] (author) at (title.south) [xshift=0cm, yshift=-0.03\paperheight]
-			{\insertauthor};
-			
-			\node[align=left, text width=0.9\paperwidth] (author) at (author.south) [xshift=0cm, yshift=-0.03\paperheight]
-			{\small\insertaffiliation};
-			
+			\node[align=left, anchor=north, text width=0.9\paperwidth] (author) at (title.south) [xshift=0cm]
+			{\insertauthor\\\vskip5pt{\footnotesize\insertaffiliation}};
+
 			\node[anchor=south, text width=0.9\paperwidth, align=center] (event) at (current page.south) [yshift=0.01\paperheight]
 			{\color{uniudblue} \hrule height 1pt width 0.9\paperwidth\vskip0.4em {\scriptsize \insertevent\\\insertdate}};
 %			{\color{uniudblue}\scriptsize \insertevent};	
