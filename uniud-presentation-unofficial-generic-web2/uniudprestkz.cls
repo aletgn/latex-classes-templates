@@ -179,48 +179,7 @@
 	%	\vspace{-10mm}
 }
 \makeatother
-%\setbeamertemplate{frametitle}{\vskip-1pt\insertframetitle\vskip2pt}%\hrule
-%\setbeamertemplate{frametitle}
-%{
-%	\vspace*{2mm}
-%	\begin{tikzpicture}[remember picture, overlay]
-%		\node[%text width=0.9\paperwidth,
-%		align=left,
-%		anchor=north,
-%		draw=uniudblue,
-%		line width=1.5pt,
-%		rounded corners=5pt,
-%		inner xsep=1pt,
-%		inner ysep=5pt,
-%		font=\bfseries\large,
-%		text=uniudblue
-%		] (titlebox)
-%		at ([xshift=0mm,yshift=0mm] current page.north)
-%		{\insertframetitle};
-%	\end{tikzpicture}
-%	\vspace{6mm}
-%}
-%\makeatletter
-%\setbeamertemplate{frametitle}
-%{\begin{tikzpicture}[remember picture, overlay]
-%	\node[
-%	align=left,
-%	anchor=north west,
-%	draw=uniudblue,
-%	line width=1.5pt,
-%	rounded corners=5pt,
-%	inner xsep=6pt,
-%	inner ysep=6pt,
-%	font=\ttfamily\Large,
-%	text=uniudblue,
-%%	fill=white,
-%	] (titlebox)
-%	at ([xshift=\beamer@leftmargin, yshift=-0.01\paperheight]current page.north west)
-%	{\insertframetitle};
-%\end{tikzpicture}
-%\vspace{6mm}
-%}
-%\makeatother
+
 
 
 % --- Blocks
@@ -253,21 +212,7 @@
 %		after=\vspace{5cm}
 	},
 }
-%\setbeamercolor{block title}{use=structure, fg=uniudblue, bg=uniudgrey}
-%\setbeamerfont{block title}{size=\large, series=\bfseries}
-%\setbeamertemplate{block begin}{%
-%	\vspace*{1ex}
-%	\begin{beamercolorbox}[ht=2.4ex,dp=1ex,leftskip=0.5em,rightskip=0.5em]{block title}
-%		\usebeamerfont*{block title}\textbf{\ttfamily\insertblocktitle}
-%	\end{beamercolorbox}%
-%	\vspace*{0.5em}
-%	\usebeamerfont{block body}%
-%	\begin{beamercolorbox}[%
-%		dp=1ex,
-%		leftskip=0.5em,
-%		rightskip=0.5em,
-%		vmode]{block body}%
-%	}
+
 
 
 %\setbeamertemplate{blocks}[rounded]
@@ -285,12 +230,9 @@
 	}
 }
 
-% --- Contents
-%\AtBeginSection[]{{\setbeamertemplate{footline}{}
-%	\begin{frame}[noframenumbering]{Contents}
-%		\small
-%		\tableofcontents[sections={1-},sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
-%\end{frame}}}
+
+
+
 \AtBeginSection[]
 {
 	{
@@ -308,4 +250,3 @@
 		\end{frame}
 	}
 }
-\endinput
