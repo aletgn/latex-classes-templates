@@ -25,23 +25,25 @@
 \LoadClass{beamer}
 
 % --- Required Packages
+\RequirePackage{lmodern}
 \RequirePackage{tikz}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[UKenglish]{babel}
 \RequirePackage{booktabs}
 \RequirePackage{graphicx}
 \RequirePackage{amsmath, amsfonts, amsthm, mathrsfs}
-\RequirePackage{pgfpages}
 \RequirePackage{listings}
 \RequirePackage{adjustbox}
 \RequirePackage{setspace}
 \RequirePackage[autostyle,italian=guillemets]{csquotes}
 \RequirePackage[minbibnames=1, maxbibnames=1, maxnames=1, sorting=none, style=numeric,backend=biber,url=false,isbn=false,doi=false]{biblatex}
+\RequirePackage{pgfpages}
+\setbeamercolor{note page}{bg=white, fg=black}
+\setbeamercolor{note title}{bg=gray!5, fg=gray!5}
+\setbeamerfont{note page}{size=\small}
 
 % --- UNIUD's colors (https://www.uniud.it/it/ateneo-uniud/ateneo-uniud/storia-ateneo/identita-visiva/manuale_dimmagine)
 \definecolor{uniudblue}{RGB}{0,0,255}
-%\definecolor{uniorange}{RGB}{255,102,0}
-%\definecolor{unibrown}{RGB}{92,64,60}
 \definecolor{uniudgrey}{RGB}{179,182,183}
 
 
@@ -59,15 +61,19 @@
 \setbeamercolor{item projected}{bg=red,fg=uniudblue}
 \setbeamertemplate{subsection in toc}[square]
 \setbeamertemplate{section in toc}[sections numbered]
-% \setbeamercolor{subsection number projected}{fg = green, bg=uniudblue}
-\setbeamercolor{subsection number projected}{bg=uniudblue}
+\setbeamercolor{subsection number projected}{bg=white}
 \setbeamercolor{section in toc}{fg=uniudblue}
-\setbeamerfont{section in toc}{series=\bfseries}
+\setbeamerfont{section in toc}{series=\ttfamily\bfseries}
+\setbeamerfont{subsection in toc}{series=\ttfamily\bfseries}
 \setbeamercolor{subsection in toc}{fg=uniudblue}
+\setbeamercolor{section in toc shaded}{fg=white}
+\setbeamercolor{subsection in toc shaded}{fg=white}
 
 % --- Custom commands
 \newcommand{\nskip}{\vskip 4pt \hrule	\vskip 4pt}
-\newcommand{\brule}{{\color{black} \hrule\vskip 3pt}}
+%\newcommand{\brule}{{\color{uniudblue} \hrule\vskip 3pt}}
+\newcommand{\brule}{\vskip 5pt{\color{uniudblue} \rule{\linewidth}{1.5pt}}\newline}
+
 \newenvironment{fullcols}
 {\begin{columns}[t, totalwidth=0.9\paperwidth]}
 	{\end{columns}}
@@ -121,6 +127,7 @@
 	\fi
 }
 
+
 \renewcommand*{\maketitle}{%	
 	\begin{frame}[plain, noframenumbering]{}
 		\begin{tikzpicture}[remember picture, overlay]
@@ -135,18 +142,18 @@
 			{\insertlogouni};
 			
 			\node[anchor=north east] at (header.north east)
-			{\color{uniudblue} \textbf{\insertdept}};
+			{\color{uniudblue} \textbf{\texttt\insertdept}};
 			
 			\node[align=left, text width=0.9\paperwidth, text=uniudblue] (title)
 			at (current page.center) [xshift=0cm, yshift=0.03\paperwidth] {
-				{\Large \textbf{\inserttitle}}
+				{\Large \textbf{\texttt\inserttitle}}
 			};
 			
 			\node[align=left, anchor=north, text width=0.9\paperwidth] (author) at (title.south) [xshift=0cm]
-			{\insertauthor\\\vskip5pt{\footnotesize\insertaffiliation}};
-
+			{\ttfamily\insertauthor\\\vskip5pt{\footnotesize\ttfamily\insertaffiliation}};
+					
 			\node[anchor=south, text width=0.9\paperwidth, align=center] (event) at (current page.south) [yshift=0.01\paperheight]
-			{\color{uniudblue} \hrule height 1pt width 0.9\paperwidth\vskip0.4em {\scriptsize \insertevent\\\insertdate}};
+			{\ttfamily\color{uniudblue} \hrule height 1pt width 0.9\paperwidth\vskip0.4em {\scriptsize \insertevent\\\insertdate}};
 %			{\color{uniudblue}\scriptsize \insertevent};	
 		\end{tikzpicture}
 		\note{\insertintronotes}
@@ -154,27 +161,114 @@
 }
 
 % --- Frame title
-\setbeamercolor{frametitle}{use=structure,fg=blue}
+\setbeamercolor{frametitle}{use=structure,fg=uniudblue}
 \setbeamerfont{frametitle}{series=\bfseries}
-\setbeamertemplate{frametitle}{\vskip-1pt\insertframetitle\vskip2pt}%\hrule
+\makeatletter
+\setbeamertemplate{frametitle}
+{
+	\begin{tikzpicture}[remember picture, overlay]
+		% Position the title
+		\node[anchor=north west, inner xsep=0pt, inner ysep=3pt, font=\ttfamily\Large, text=uniudblue]
+		(titlebox) at ([xshift=\beamer@leftmargin, yshift=-0.01\paperheight]current page.north west)
+		{\insertframetitle};
+		
+		% Draw only the bottom line
+		\draw[uniudblue, line width=1.5pt, rounded corners=5pt]
+		(titlebox.south west) -- (titlebox.south east);
+	\end{tikzpicture}
+	%	\vspace{-10mm}
+}
+\makeatother
+%\setbeamertemplate{frametitle}{\vskip-1pt\insertframetitle\vskip2pt}%\hrule
+%\setbeamertemplate{frametitle}
+%{
+%	\vspace*{2mm}
+%	\begin{tikzpicture}[remember picture, overlay]
+%		\node[%text width=0.9\paperwidth,
+%		align=left,
+%		anchor=north,
+%		draw=uniudblue,
+%		line width=1.5pt,
+%		rounded corners=5pt,
+%		inner xsep=1pt,
+%		inner ysep=5pt,
+%		font=\bfseries\large,
+%		text=uniudblue
+%		] (titlebox)
+%		at ([xshift=0mm,yshift=0mm] current page.north)
+%		{\insertframetitle};
+%	\end{tikzpicture}
+%	\vspace{6mm}
+%}
+%\makeatletter
+%\setbeamertemplate{frametitle}
+%{\begin{tikzpicture}[remember picture, overlay]
+%	\node[
+%	align=left,
+%	anchor=north west,
+%	draw=uniudblue,
+%	line width=1.5pt,
+%	rounded corners=5pt,
+%	inner xsep=6pt,
+%	inner ysep=6pt,
+%	font=\ttfamily\Large,
+%	text=uniudblue,
+%%	fill=white,
+%	] (titlebox)
+%	at ([xshift=\beamer@leftmargin, yshift=-0.01\paperheight]current page.north west)
+%	{\insertframetitle};
+%\end{tikzpicture}
+%\vspace{6mm}
+%}
+%\makeatother
+
 
 % --- Blocks
+\RequirePackage[most]{tcolorbox}
+\newtcolorbox{blox}[1]{%
+	colback=white,
+	colframe=uniudblue,
+	colbacktitle=white,
+	coltitle=uniudblue,
+	fonttitle=\bfseries,
+	title={\ttfamily\normalsize#1}, %\thetcbcounter
+	boxrule=1.5pt,
+	enhanced,
+	boxsep=0pt,
+	top=12pt,
+	% before skip = -15pt,
+	attach boxed title to top left={yshift=-10pt, xshift=6pt},
+	boxed title style={
+		boxrule=1.5pt,
+		colframe=uniudblue,
+		colback=uniudgrey!50,
+%		interior style={top color=uniudgrey, bottom color=uniudgrey},
+		% boxsep=12pt,
+%		top=1pt,
+%		bottom=1pt,
+		left=5pt,
+		right=5pt,
+		valign=center,
+%		title style={baseline=0.5cm},
+%		after=\vspace{5cm}
+	},
+}
+%\setbeamercolor{block title}{use=structure, fg=uniudblue, bg=uniudgrey}
+%\setbeamerfont{block title}{size=\large, series=\bfseries}
+%\setbeamertemplate{block begin}{%
+%	\vspace*{1ex}
+%	\begin{beamercolorbox}[ht=2.4ex,dp=1ex,leftskip=0.5em,rightskip=0.5em]{block title}
+%		\usebeamerfont*{block title}\textbf{\ttfamily\insertblocktitle}
+%	\end{beamercolorbox}%
+%	\vspace*{0.5em}
+%	\usebeamerfont{block body}%
+%	\begin{beamercolorbox}[%
+%		dp=1ex,
+%		leftskip=0.5em,
+%		rightskip=0.5em,
+%		vmode]{block body}%
+%	}
 
-\setbeamercolor{block title}{use=structure, fg=uniudblue, bg=uniudgrey}
-\setbeamerfont{block title}{size=\normalsize, series=\bfseries}
-\setbeamertemplate{block begin}{%
-	\vspace*{1ex}
-	\begin{beamercolorbox}[ht=2.4ex,dp=1ex,leftskip=0.5em,rightskip=0.5em]{block title}
-		\usebeamerfont*{block title}\insertblocktitle
-	\end{beamercolorbox}%
-	\vspace*{0.5em}
-	\usebeamerfont{block body}%
-	\begin{beamercolorbox}[%
-		dp=1ex,
-		leftskip=0.5em,
-		rightskip=0.5em,
-		vmode]{block body}%
-	}
 
 %\setbeamertemplate{blocks}[rounded]
 % --- Footline
@@ -192,13 +286,26 @@
 }
 
 % --- Contents
-\AtBeginSection[]{{\setbeamertemplate{footline}{}
-	\begin{frame}[noframenumbering]{Contents}
-		\small
-		\tableofcontents[sections={1-},sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
-\end{frame}}}
-
-
-
-
+%\AtBeginSection[]{{\setbeamertemplate{footline}{}
+%	\begin{frame}[noframenumbering]{Contents}
+%		\small
+%		\tableofcontents[sections={1-},sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
+%\end{frame}}}
+\AtBeginSection[]
+{
+	{
+		\setbeamertemplate{background canvas}[default]
+		\setbeamercolor{background canvas}{bg=uniudgrey}
+		\setbeamertemplate{footline}{}
+		
+		\begin{frame}[noframenumbering]{Contents}
+			\small
+			\tableofcontents[
+			sections={1-},
+			sectionstyle=show/shaded,
+			subsectionstyle=show/shaded/hide
+			]
+		\end{frame}
+	}
+}
 \endinput
