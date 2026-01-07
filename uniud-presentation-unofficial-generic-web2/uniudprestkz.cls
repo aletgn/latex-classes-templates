@@ -13,9 +13,9 @@
 % 
 % The Current Maintainer of this work is Alessandro Tognan.
 %
-% This work consists of the file uniudpresww.cls.
+% This work consists of the file uniudprestkz.cls.
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{uniudpresww}[2026/01/06 UniUD -- Unofficial Presentation Template (Web theme)]
+\ProvidesClass{uniudprestkz}[2026/01/07 UniUD -- Unofficial Presentation Template (Web theme, Tikz)]
 
 % --- Class' options
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{beamer}}
