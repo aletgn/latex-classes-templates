@@ -14,6 +14,8 @@ The repository includes the following classes and/or templates:
 
 - UniUD (unofficial) presentation (web colors);
 
+- UniUD (unofficial) presentation (web colors, TikZ);
+
 - UniUD (unofficial) PhD presentation;
 
 - UniUD (unofficial) PhD thesis;
