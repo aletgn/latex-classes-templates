@@ -22,6 +22,8 @@ The repository includes the following classes and/or templates:
 
 - AIAS (unofficial) conference presentation;
 
+- AIAS (unofficial) conference presentation (TikZ);
+
 - AIAS (unofficial) candidature for AIAS Award;
 
 - two-page abstract submission.
